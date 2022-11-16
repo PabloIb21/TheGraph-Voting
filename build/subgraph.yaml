@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Voting
@@ -19,7 +19,7 @@ dataSources:
         - newVote
       abis:
         - name: Voting
-          file: ./abis/Voting.json
+          file: Voting\abis\Voting.json
       eventHandlers:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
@@ -27,4 +27,4 @@ dataSources:
           handler: handleNewCandidate
         - event: newVote(uint256,address,uint256)
           handler: handleNewVote
-      file: ./src/voting.ts
+      file: Voting\Voting.wasm
